@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddPersonActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="36dp"
+        android:text="Ingrese una nueva persona"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/input_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!--en el atributo 'android.digits', la lista de caracteres admitidos -->
+    <!--en el atributo 'indroid:inputType', el tipo de dato que se requiere
+    ingresar, abrir el teclado con de manera conveniente. Por ejemplo:
+     primera letra mayuscula si es un nombre o apellido, o que aparezca
+     @ si es un email-->
+
+    <EditText
+        android:id="@+id/input_name"
+        android:digits="abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZáéíóúÁÉÍÓÚ"
+        android:inputType= "textPersonName|textCapSentences"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"
+        android:hint="Nombre"
+        app:layout_constraintBottom_toTopOf="@+id/input_last_name"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/input_last_name"
+        android:digits="abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZáéíóúÁÉÍÓÚ"
+        android:inputType= "textPersonName|textCapSentences"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="12dp"
+        android:fontFamily="sans-serif"
+        android:hint="Apellido"
+        app:layout_constraintBottom_toTopOf="@+id/input_birth_date"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+<EditText
+    android:id="@+id/input_birth_date"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="60dp"
+    android:focusable="false"
+    android:fontFamily="sans-serif"
+    android:hint="Fecha de nacimiento"
+    app:layout_constraintBottom_toTopOf="@+id/input_email"
+    app:layout_constraintRight_toLeftOf="@+id/imageButton1"
+    app:layout_constraintStart_toStartOf="parent" />
+
+<ImageButton
+    android:id="@+id/imageButton1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="4dp"
+    android:contentDescription="aaaa"
+    android:background="#0000"
+    android:cropToPadding="true"
+    android:layout_marginLeft="8dp"
+    android:src="@drawable/ic_datepicker"
+    app:layout_constraintBottom_toTopOf="@+id/input_email"
+    app:layout_constraintLeft_toRightOf="@+id/input_birth_date" />
+
+
+<EditText
+    android:id="@+id/input_email"
+    android:inputType= "textEmailAddress"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="252dp"
+    android:fontFamily="sans-serif"
+    android:hint="Correo electrónico"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+
+<Button
+    android:id="@+id/button_add_person"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="8dp"
+    android:text="Agregar"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.498"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/input_email"
+    app:layout_constraintVertical_bias="0.174" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
